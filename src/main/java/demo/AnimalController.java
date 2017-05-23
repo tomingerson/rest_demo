@@ -5,7 +5,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -48,4 +50,10 @@ public class AnimalController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @PutMapping("/animals/{name}")
+    public ResponseEntity<Animal> upsertAnimal(@PathVariable String name) {
+        throw new NotImplementedException();
+    }
+
 }
